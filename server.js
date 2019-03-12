@@ -1,7 +1,8 @@
  const express = require('express');
  const hbs = require('hbs');
  const fs = require('fs');
- const port = process.env.PORT || 3000;
+ const port = process.env.PORT || 8000;
+
  var app = express();
 
  app.set('view engine' , 'hbs');
@@ -50,6 +51,13 @@ app.get('/about', (req,res) => {
  	});
  
  });
+
+app.get('/projects', (req,res) => {
+
+ 	res.render('projects.hbs');
+ 
+ });
+
  app.listen(port, () => {
  	console.log(`server is up and running on port ${port}`);
  });
